@@ -6,18 +6,18 @@
 
 int main(int argc, char** argv) 
 {
-	int no_of_verticles;
+	int no_of_nodes;
 	int source_node;
 
 	std::ifstream in("input.txt");
 	std::ofstream out("output.txt");
     
-	in >> no_of_verticles;
+	in >> no_of_nodes;
 	in >> source_node;
 
-	std::vector<std::vector<int>> graph_adjacency_matrix(no_of_verticles);
+	std::vector<std::vector<int>> graph_adjacency_matrix(no_of_nodes);
 	std::for_each(std::begin(graph_adjacency_matrix), std::end(graph_adjacency_matrix), [&](auto& iterator) {
-		iterator.resize(no_of_verticles);
+		iterator.resize(no_of_nodes);
 		for (auto it = std::begin(iterator); it != std::end(iterator); it++) {
 			in >> (*it);
 		}
@@ -32,7 +32,7 @@ int main(int argc, char** argv)
 	std::cout << "Time: " << duration.count() << " microseconds" << std::endl;
 
 	out << "Vertex \tDistance from " << source_node << "(source node)" << '\n';
-	for (int i = 0; i < no_of_verticles; i++) {
+	for (int i = 0; i < no_of_nodes; i++) {
 		out << i << " \t\t" << distances[i] << '\n';
 	}
 

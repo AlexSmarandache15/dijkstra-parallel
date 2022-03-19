@@ -16,9 +16,9 @@ private:
 	int                           source_node;
 
 	/**
-	 The number of verticles.
+	 The number of nodes.
 	 */
-	int                           no_of_verticles;
+	int                           no_of_nodes;
 
 	/**
 	 The graph adjacency matrix. Contains int values.
