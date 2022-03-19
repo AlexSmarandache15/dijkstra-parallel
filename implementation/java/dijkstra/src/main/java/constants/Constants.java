@@ -17,12 +17,12 @@ public class Constants {
   /**
    * Constant for minimum cost of an edge(without between the same node).
    */
-  public static final int MIN_EDGE_COST = 1;
+  public static final int MIN_EDGE_COST = 10;
   
   /**
    * Constant for maximum cost of an edge(without between the same node).
    */
-  public static final int MAX_EDGE_COST = 1000;
+  public static final int MAX_EDGE_COST = 100;
   
   /**
    * Constant for minimum graph density.

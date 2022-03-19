@@ -1,10 +1,13 @@
 package graph.generator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import constants.Constants;
+import constants.IOConstants;
 import graph.entities.Graph;
+import graph.util.IOUtil;
 import util.RandomUtil;
 
 /**
@@ -49,6 +52,17 @@ public class GraphGenerator {
     }
     
     return new Graph(adjacencyMatrix);
+  }
+  
+  /**
+   * Used to generate input data.
+   * 
+   * @param args not needed.
+   * 
+   * @throws IOException When a IO problem appear.
+   */
+  public static void main(String[] args) throws IOException {
+    IOUtil.writeGraph(IOConstants.INPUT_FILE, GraphGenerator.generateGraph(100, 50));
   }
 
 }

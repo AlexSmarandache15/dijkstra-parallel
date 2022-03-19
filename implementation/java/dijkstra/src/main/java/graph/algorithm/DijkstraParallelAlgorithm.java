@@ -107,7 +107,7 @@ public class DijkstraParallelAlgorithm implements IAlgorithm {
     }
 
     final UpdaterRunnable reduceRunnable = new UpdaterRunnable(queues, isFinished, visited, currentNode);
-    final CyclicBarrier cyclicBarrier   = new CyclicBarrier(noOfThreads, reduceRunnable);
+    final CyclicBarrier cyclicBarrier    = new CyclicBarrier(noOfThreads, reduceRunnable);
 
     int start = 0;
     int end = 0;
