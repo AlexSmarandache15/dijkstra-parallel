@@ -8,6 +8,12 @@ import constants.Constants;
 import graph.entities.Graph;
 import graph.entities.Node;
 
+/**
+ * Contains implementation for sequential Dijkstra's algorithm.
+ * 
+ * @author alex_smarandache
+ *
+ */
 public class DijkstraSequentialAlgorithm implements IAlgorithm {
 
   /**
@@ -73,10 +79,10 @@ public class DijkstraSequentialAlgorithm implements IAlgorithm {
    * @param node The node if to process its neighbours.
    */
   private void processNeighbours(final int node) {
-    List<Integer> neighbours = graph.getAdjacencyMatrix().get(node);
+    final List<Integer> neighbours = graph.getAdjacencyMatrix().get(node);
     for (int i = 0; i < neighbours.size(); i++) {
       if (!visited[i] && neighbours.get(i) > 0) {
-        int newDistance = distances.get(node) + neighbours.get(i);
+        final int newDistance = distances.get(node) + neighbours.get(i);
         if (newDistance < distances.get(i)) {
           distances.set(i, newDistance);
           nodesQueue.add(new Node(i, newDistance));
@@ -102,6 +108,4 @@ public class DijkstraSequentialAlgorithm implements IAlgorithm {
   }
   
   
-
-
 }

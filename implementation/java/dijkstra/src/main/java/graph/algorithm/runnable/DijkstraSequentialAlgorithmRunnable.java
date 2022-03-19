@@ -36,7 +36,7 @@ public class DijkstraSequentialAlgorithmRunnable implements Runnable {
     final Instant end = Instant.now();
     final long startTimeMicros = start.getEpochSecond() * 1000_000 + start.getNano() / 1000;
     final long endTimeMicros = end.getEpochSecond() * 1000_000 + end.getNano() / 1000;
-    System.out.println("Time: " + (endTimeMicros - startTimeMicros) + " microseconds.");
+    System.out.println("Dijkstra sequential time: " + (endTimeMicros - startTimeMicros) + " microseconds.");
     
     try {
       IOUtil.writeResults(IOConstants.OUTPUT_FILE_SEQ, dijkstraSeq.getDistances(), 

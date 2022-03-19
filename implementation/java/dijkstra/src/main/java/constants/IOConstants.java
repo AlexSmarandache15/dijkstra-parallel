@@ -29,5 +29,10 @@ public class IOConstants {
    * The file name to write the distances resulted by applying Dijkstra sequential algorithm.
    */
   public static final String OUTPUT_FILE_SEQ = "output_seq.txt";
+  
+  /**
+   * The file name to write the distances resulted by applying Dijkstra parallel algorithm.
+   */
+  public static final String OUTPUT_FILE_PAR = "output_par.txt";
 
 }
