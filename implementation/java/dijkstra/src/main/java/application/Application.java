@@ -3,7 +3,8 @@ package application;
 import java.io.IOException;
 
 import constants.IOConstants;
-import graph.generator.GraphGenerator;
+import graph.algorithm.DijkstraSequentialAlgorithm;
+import graph.algorithm.runnable.DijkstraSequentialAlgorithmRunnable;
 import graph.util.IOUtil;
 
 /**
@@ -37,7 +38,8 @@ public class Application {
    * @throws IOException 
    */
   public static void main(String... args) throws IOException {
-    IOUtil.writeGraph(IOConstants.FILE_TO_WRITE_GENERATED_GRAPH, GraphGenerator.generateGraph(10, 50)); 
+   new DijkstraSequentialAlgorithmRunnable(new DijkstraSequentialAlgorithm(
+       IOUtil.parseGraph(IOConstants.INPUT_FILE))).run();
   }
 
 }

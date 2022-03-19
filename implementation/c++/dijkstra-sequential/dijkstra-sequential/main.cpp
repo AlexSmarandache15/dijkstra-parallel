@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 	std::vector<int> distances = dijkstra_seq.getDistances();
 	auto stop_time = std::chrono::high_resolution_clock::now();
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time);
-	std::cout << "Time: " << duration.count() << " microseconds" << std::endl;
+	std::cout << "Time: " << duration.count() << " microseconds." << std::endl;
 
 	out << "Vertex \tDistance from " << source_node << "(source node)" << '\n';
 	for (int i = 0; i < no_of_nodes; i++) {
