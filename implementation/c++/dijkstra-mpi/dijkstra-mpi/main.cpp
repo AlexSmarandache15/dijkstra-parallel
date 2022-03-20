@@ -1,5 +1,3 @@
-#include <cstdio>
-#include <cstdlib>
 #include <iostream>
 #include <chrono>
 #include <mpi.h>
@@ -43,6 +41,10 @@ int main(int argc, char* argv[])
         std::fstream in(input_file);
         in >> no_of_nodes;
         in >> source_node;
+        if (no_of_nodes % no_of_processes) {
+            std::cout << "Number of nodes and number of processes must be divisible\n";
+            exit(0);
+        }
         adjacency_matrix = static_cast<int*>(malloc((no_of_nodes) * (no_of_nodes) * sizeof(int)));
         for (int i = 0; i < no_of_nodes; i++) {
             for (int j = 0; j < no_of_nodes; j++) {
