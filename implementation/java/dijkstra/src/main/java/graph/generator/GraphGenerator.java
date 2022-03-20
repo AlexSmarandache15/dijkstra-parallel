@@ -62,7 +62,7 @@ public class GraphGenerator {
    * @throws IOException When a IO problem appear.
    */
   public static void main(String[] args) throws IOException {
-    IOUtil.writeGraph(IOConstants.INPUT_FILE, GraphGenerator.generateGraph(100, 50));
+    IOUtil.writeGraph(IOConstants.INPUT_FILE, GraphGenerator.generateGraph(8, 70));
   }
 
 }
