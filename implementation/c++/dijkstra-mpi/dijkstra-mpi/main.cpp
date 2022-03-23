@@ -8,13 +8,16 @@
 MPI_Datatype create_block_column(int, int);
 void share_matrix(int*, int[], int, MPI_Datatype, int, MPI_Comm);
 void dijkstra(int[], int[], int[], int, int, int, int, MPI_Comm);
-void initialize_matrix(const int[], int[], int[], int[], int, int, int);
+void init(const int[], int[], int[], int[], int, int, int);
 int get_minimum_distance(const int[], const int[], int);
 int get_node_id(int, int, int);
 void write_result(const std::string&, int[], int, int, int, MPI_Comm);
 
 std::chrono::steady_clock::time_point start_time;
 
+/*
+* @author Alex_Smarandache
+*/
 int main(int argc, char* argv[])
 {
     int* adjacency_matrix = nullptr;
@@ -131,7 +134,7 @@ void dijkstra(int adjacency_matrix[], int current_process_distances[], int curre
     int node_id = 0;
 
     visited = static_cast<int*>(malloc(current_process_part * sizeof(int)));
-    initialize_matrix(adjacency_matrix, current_process_distances, current_process_pred, visited, current_process_part,
+    init(adjacency_matrix, current_process_distances, current_process_pred, visited, current_process_part,
         current_process_id, source_node);
 
     for (int i = 1; i < no_of_nodes; i++) {
@@ -171,9 +174,9 @@ void dijkstra(int adjacency_matrix[], int current_process_distances[], int curre
 }
 
 /*
-Initialize local matrix for each process.
+Initialize distances and visited vector.
 */
-void initialize_matrix(const int adjacency_matrix[], int current_process_distances[], int current_process_pred[], int visited[],
+void init(const int adjacency_matrix[], int current_process_distances[], int current_process_pred[], int visited[],
     int current_process_part, int current_process_id, int source_node) {
 
     for (int i = 0; i < current_process_part; i++) {
