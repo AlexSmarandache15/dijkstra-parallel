@@ -31,8 +31,13 @@ public class IOConstants {
   public static final String OUTPUT_FILE_SEQ = "output_seq.txt";
   
   /**
-   * The file name to write the distances resulted by applying Dijkstra parallel algorithm.
+   * The file name to write the distances resulted by applying Dijkstra parallel threads algorithm.
    */
-  public static final String OUTPUT_FILE_PAR = "output_par.txt";
+  public static final String OUTPUT_FILE_THR_PAR = "output_par_thr.txt";
+
+  /**
+   * The file name to write the distances resulted by applying Dijkstra parallel streams algorithm.
+   */
+  public static final String OUTPUT_FILE_STR_PAR = "output_par_str.txt";
 
 }

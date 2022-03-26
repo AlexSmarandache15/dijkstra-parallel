@@ -1,7 +1,6 @@
 package graph.algorithm.runnable;
 
 import constants.IOConstants;
-import graph.algorithm.DijkstraParallelAlgorithm;
 import graph.algorithm.DijkstraParallelStreamsAlgorithm;
 import graph.util.IOUtil;
 
@@ -9,7 +8,7 @@ import java.io.IOException;
 import java.time.Instant;
 
 /**
- * Used to run an instance of @DijkstraParallelAlgorithm.
+ * Used to run an instance of @{@link DijkstraParallelStreamsAlgorithm}.
  * 
  * @author alex_smarandache
  *
@@ -40,7 +39,7 @@ public class DijkstraParallelStreamsAlgorithmRunnable implements Runnable {
     System.out.println("Dijkstra parallel streams time: " + (endTimeMicros - startTimeMicros) + " microseconds.");
     
     try {
-      IOUtil.writeResults(IOConstants.OUTPUT_FILE_PAR, dijkstraPar.getDistances(), 
+      IOUtil.writeResults(IOConstants.OUTPUT_FILE_STR_PAR, dijkstraPar.getDistances(),
           dijkstraPar.getGraph().getSourceNode());
     } catch (IOException e) {
       e.printStackTrace();

@@ -2,13 +2,16 @@ package graph.algorithm;
 
 import constants.Constants;
 import graph.entities.Graph;
-import graph.entities.Node;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.PriorityQueue;
 
+/**
+ * Implementation of Dijkstra's parallel algorithm using streams.
+ *
+ * @author Alex_Smarandache
+ */
 public class DijkstraParallelStreamsAlgorithm implements IAlgorithm {
 
   /**
@@ -16,6 +19,9 @@ public class DijkstraParallelStreamsAlgorithm implements IAlgorithm {
    */
   private final Graph graph;
 
+  /**
+   * The list with node items
+   */
   private final List<NodeItem> nodes = new ArrayList<>();
 
 
@@ -57,19 +63,41 @@ public class DijkstraParallelStreamsAlgorithm implements IAlgorithm {
     }
   }
 
+  /**
+   * @return The graph.
+   */
   public List<Integer> getDistances() {
     List<Integer> toReturn = new ArrayList<>();
     nodes.forEach(node -> toReturn.add(node.distance));
     return toReturn;
   }
 
+  /**
+   * @implNote Must be call the solve() method to process the valid distances.
+   *
+   * @return The distances between source node and the rest of nodes.
+   */
   public Graph getGraph() {
     return graph;
   }
 
+  /**
+   * Class to store data about a node.
+   */
   private class NodeItem  {
+    /**
+     * The distance between the current node and source node.
+     */
     public int distance = Constants.INFINITE;
+
+    /**
+     * <code>true</code> if the node was visited.
+     */
     public boolean visited = false;
+
+    /**
+     * The node id.
+     */
     public int id;
   }
 }

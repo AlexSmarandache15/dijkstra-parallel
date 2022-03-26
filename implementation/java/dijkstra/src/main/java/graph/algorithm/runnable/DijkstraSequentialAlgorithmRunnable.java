@@ -8,7 +8,7 @@ import graph.algorithm.DijkstraSequentialAlgorithm;
 import graph.util.IOUtil;
 
 /**
- * Used to run an instance of @DijkstraSequentialAlgorithm.
+ * Used to run an instance of @{@link DijkstraSequentialAlgorithm}.
  * 
  * @author alex_smarandache
  *
