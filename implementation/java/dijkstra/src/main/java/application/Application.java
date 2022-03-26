@@ -1,11 +1,13 @@
-package application;
+ package application;
 
 import java.io.IOException;
 
 import constants.IOConstants;
 import graph.algorithm.DijkstraParallelAlgorithm;
+import graph.algorithm.DijkstraParallelStreamsAlgorithm;
 import graph.algorithm.DijkstraSequentialAlgorithm;
 import graph.algorithm.runnable.DijkstraParallelAlgorithmRunnable;
+import graph.algorithm.runnable.DijkstraParallelStreamsAlgorithmRunnable;
 import graph.algorithm.runnable.DijkstraSequentialAlgorithmRunnable;
 import graph.util.IOUtil;
 
@@ -37,11 +39,16 @@ public class Application {
    * <br>
    * The default value is <code>all</code>.
    * <br>
-   * You an specify the number of threads for the parallel algorithm with args[1].
+   * You can specify the number of threads for the parallel algorithm with args[1].
    * 
    * @throws IOException 
    */
   public static void main(String... args) throws IOException {
+    new DijkstraSequentialAlgorithmRunnable(new DijkstraSequentialAlgorithm(
+            IOUtil.parseGraph(IOConstants.INPUT_FILE))).run();
+    new DijkstraParallelStreamsAlgorithmRunnable(new DijkstraParallelStreamsAlgorithm(
+            IOUtil.parseGraph(IOConstants.INPUT_FILE))).run();
+    /*
     if(args.length == 0) {
       new DijkstraParallelAlgorithmRunnable(new DijkstraParallelAlgorithm(
           IOUtil.parseGraph(IOConstants.INPUT_FILE))).run();
@@ -65,7 +72,7 @@ public class Application {
         new DijkstraSequentialAlgorithmRunnable(new DijkstraSequentialAlgorithm(
             IOUtil.parseGraph(IOConstants.INPUT_FILE))).run();
       }
-    }
+    }*/
   }
 
 }

@@ -1,4 +1,7 @@
 #include "DijkstraSequential.h"
+#include <stddef.h>
+#include <ratio>
+#include <execution>
 
 DijkstraSequential::DijkstraSequential(const std::vector<std::vector<int>>& graph_adjacency_matrix,
 	const int& source_node)
@@ -27,6 +30,7 @@ std::pair<int, int> DijkstraSequential::get_min_distance()
 
 void DijkstraSequential::solve()
 {
+	std::current_exception::
 	distances[source_node] = 0;
 	for (int loop_index = 0; loop_index < no_of_nodes - 1; loop_index++) {
 		const std::pair<int, int> min_distance = get_min_distance();

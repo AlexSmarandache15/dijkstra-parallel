@@ -103,7 +103,7 @@ public class DijkstraParallelAlgorithm implements IAlgorithm {
     distances.set(graph.getSourceNode(), 0);
 
     for(int i = 0; i < noOfThreads; i++) {
-      queues.add(new PriorityQueue<>());
+      queues.add(new PriorityQueue<Node>());
     }
 
     final UpdaterRunnable reduceRunnable = new UpdaterRunnable(queues, isFinished, visited, currentNode);

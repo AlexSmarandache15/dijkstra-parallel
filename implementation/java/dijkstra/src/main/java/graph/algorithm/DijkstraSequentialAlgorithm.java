@@ -80,6 +80,9 @@ public class DijkstraSequentialAlgorithm implements IAlgorithm {
    */
   private void processNeighbours(final int node) {
     final List<Integer> neighbours = graph.getAdjacencyMatrix().get(node);
+    neighbours.parallelStream().forEach(neighbour -> {
+
+    });
     for (int i = 0; i < neighbours.size(); i++) {
       if (!visited[i] && neighbours.get(i) > 0) {
         final int newDistance = distances.get(node) + neighbours.get(i);
