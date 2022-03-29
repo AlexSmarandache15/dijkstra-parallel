@@ -17,13 +17,13 @@ output-1000.txt
 Time(microseconds): 4725
 
 output-2500.txt
-Time(microseconds): 27000
+Time(microseconds): 270000
 
 output-5000.txt
-Time(microseconds): 140500
+Time(microseconds): 1405000
 
 output-7500.txt
-Time(microseconds): 279400
+Time(microseconds): 2794000
 
 output-10000.txt
-Time(microseconds): 801084
+Time(microseconds): 8010840
